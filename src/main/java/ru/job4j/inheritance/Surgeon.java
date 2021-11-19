@@ -9,10 +9,6 @@ public class Surgeon extends Doctor {
         this.talent = talent;
     }
 
-    public Surgeon(boolean talent) {
-        this.talent = talent;
-    }
-
     public int sewUp(Patient patient) {
         Suture sut = new Suture();
         return patient.addSuture(sut);

@@ -9,10 +9,6 @@ public class Builder extends Engineer {
         this.fatigue = fatigue;
     }
 
-    public Builder(boolean fatigue) {
-        this.fatigue = fatigue;
-    }
-
     public void build(Building newBuilding) {
         Brick brick = new Brick();
         newBuilding.addBrick(brick);

@@ -11,14 +11,6 @@ public class Engineer extends Profession {
         this.previousJobs = previousJobs;
 }
 
-    public Engineer(int experience, int previousJobs) {
-        this.experience = experience;
-        this.previousJobs = previousJobs;
-    }
-
-    public Engineer() {
-    }
-
     public boolean findJob() {
         return super.getEducation() != null && experience > 15 && previousJobs <= 4;
     }

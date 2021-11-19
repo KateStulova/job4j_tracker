@@ -9,13 +9,6 @@ public class Programmer extends Engineer {
         this.projects = projects;
     }
 
-    public Programmer(int projects) {
-        this.projects = projects;
-    }
-
-    public Programmer() {
-    }
-
     public void addProject() {
         this.projects += 1;
     }

@@ -11,14 +11,6 @@ public class Doctor extends Profession {
         this.patientSatisfaction = patientSatisfaction;
     }
 
-    public Doctor(int experience, boolean patientSatisfaction) {
-        this.experience = experience;
-        this.patientSatisfaction = patientSatisfaction;
-    }
-
-    public Doctor() {
-    }
-
     public void cure(Patient patient) {
         while (!patient.tryTocure()) {
             System.out.println("Лечим дальше, пациент все еще болен.");

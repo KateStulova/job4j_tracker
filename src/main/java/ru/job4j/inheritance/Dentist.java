@@ -9,10 +9,6 @@ public class Dentist extends Doctor {
         this.grade = grade;
     }
 
-    public Dentist(int grade) {
-        this.grade = grade;
-    }
-
     public boolean removeTooth() {
         return super.getEducation() != null && grade > 30;
     }

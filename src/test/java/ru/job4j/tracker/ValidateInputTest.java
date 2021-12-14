@@ -36,10 +36,15 @@ public class ValidateInputTest {
                 test
         );
         ValidateInput input = new ValidateInput(out, in);
-        for (String elem : test) {
-            int selected = input.askInt("Select: ");
-            assertThat(selected, is(Integer.parseInt(elem)));
-        }
+        int selected0 = input.askInt("Select: ");
+        assertThat(selected0, is(0));
+        int selected1 = input.askInt("Select: ");
+        assertThat(selected1, is(1));
+        int selected2 = input.askInt("Select: ");
+        assertThat(selected2, is(2));
+        int selected6 = input.askInt("Select: ");
+        assertThat(selected6, is(6));
+
     }
 
     @Test

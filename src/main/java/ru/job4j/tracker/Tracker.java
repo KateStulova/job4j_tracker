@@ -24,7 +24,7 @@ public class Tracker {
                 res.add(item);
             }
         }
-        return List.copyOf(res);
+        return res;
     }
 
     private int indexOf(int id) {

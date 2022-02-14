@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 
 public class ItemDescByNameTest {
     @Test
-    public void sortDescByName() {
+    public void sortDescByNameWithID() {
         List<Item> items = Arrays.asList(
                 new Item(1, "Kate"),
                 new Item(2, "One more Kate"),
@@ -21,6 +21,22 @@ public class ItemDescByNameTest {
                 new Item(2, "One more Kate"),
                 new Item(1, "Kate"),
                 new Item(3, "And one more Kate")
+        );
+        Collections.sort(items, new ItemDescByName());
+        assertThat(items, is(expected));
+    }
+
+    @Test
+    public void sortDescByName() {
+        List<Item> items = Arrays.asList(
+                new Item("Kate"),
+                new Item("One more Kate"),
+                new Item("And one more Kate")
+        );
+        List<Item> expected = Arrays.asList(
+                new Item("One more Kate"),
+                new Item("Kate"),
+                new Item("And one more Kate")
         );
         Collections.sort(items, new ItemDescByName());
         assertThat(items, is(expected));

@@ -61,11 +61,11 @@ public class Item {
             return false;
         }
         Item item = (Item) o;
-        return Objects.equals(id, item.id);
+        return Objects.equals(id, item.id) && Objects.equals(name, item.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id) + Objects.hash(name);
     }
 }

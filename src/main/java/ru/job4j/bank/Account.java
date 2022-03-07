@@ -39,6 +39,8 @@ public class Account {
 
     /**
      * Сеттер для поля requisite
+     *
+     * @param requisite реквизиты банковского счета
      */
     public void setRequisite(String requisite) {
         this.requisite = requisite;
@@ -55,6 +57,7 @@ public class Account {
 
     /**
      * Сеттер для поля balance
+     * @param balance баланс банковского счета
      */
     public void setBalance(double balance) {
         this.balance = balance;

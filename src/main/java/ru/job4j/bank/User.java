@@ -39,6 +39,7 @@ public class User {
 
     /**
      * Сеттер для поля passport
+     * @param passport паспорт пользователя
      */
     public void setPassport(String passport) {
         this.passport = passport;
@@ -55,6 +56,7 @@ public class User {
 
     /**
      * Сеттер для поля username
+     * @param username имя пользователя
      */
     public void setUsername(String username) {
         this.username = username;

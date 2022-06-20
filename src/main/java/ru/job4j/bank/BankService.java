@@ -54,7 +54,7 @@ public class BankService {
      * Осуществляет поиск пользователя по паспорту в банковской базе клиентов
      *
      * @param passport паспорт пользователя
-     * @return объект Optional<User>
+     * @return либо объект Optional<User>, либо пустой Optional
      */
     public Optional<User> findByPassport(String passport) {
         return users.keySet()
@@ -68,17 +68,14 @@ public class BankService {
      *
      * @param passport паспорт пользователя
      * @param requisite реквизиты банковского счета
-     * @return объект Optional<Account>
+     * @return либо объект Optional<Account>, либо пустой Optional
      */
     public Optional<Account> findByRequisite(String passport, String requisite) {
         Optional<User> user = findByPassport(passport);
-        if (user.isPresent()) {
-            return users.get(user.get())
-                    .stream()
-                    .filter(acc -> requisite.equals(acc.getRequisite()))
-                    .findFirst();
-        }
-        return Optional.empty();
+        return user.flatMap(value -> users.get(value)
+                .stream()
+                .filter(acc -> requisite.equals(acc.getRequisite()))
+                .findFirst());
     }
 
     /**
